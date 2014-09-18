@@ -1,0 +1,15 @@
+/**
+ * Main loop for DORK Client Application
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ */
+
+public class DORKClientMain 
+{
+	public static void main(String[] args) 
+	{
+		
+
+	}
+}

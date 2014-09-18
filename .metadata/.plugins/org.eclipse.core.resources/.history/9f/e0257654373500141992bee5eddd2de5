@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+/**
+ * Main loop for DORK Client Application
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ */
+
+public class DORKClientMain 
+{
+	private static Scanner kb = new Scanner(System.in);
+	
+	public static void main(String[] args) 
+	{
+		for (String l : Constants.C_8025WelcomeScreen)
+		{
+			System.out.println(l);
+		}
+		System.out.print("\u0021");
+		
+		kb.nextLine();
+		
+		System.exit(0);
+	}
+}

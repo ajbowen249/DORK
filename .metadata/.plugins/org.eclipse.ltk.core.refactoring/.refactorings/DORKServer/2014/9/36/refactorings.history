@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;DORKServer.java&apos; to &apos;IDORKServer.java&apos;&#x0D;&#x0A;- Original project: &apos;DORKServer&apos;&#x0D;&#x0A;- Original element: &apos;DORKServer.java&apos;&#x0D;&#x0A;- Renamed element: &apos;IDORKServer.java&apos;" description="Rename compilation unit &apos;DORKServer.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{DORKServer.java" name="IDORKServer.java" references="false" stamp="1409778805403" version="1.0"/>
+</session>

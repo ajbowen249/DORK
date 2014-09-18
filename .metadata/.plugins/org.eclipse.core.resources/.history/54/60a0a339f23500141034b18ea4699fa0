@@ -1,0 +1,28 @@
+/**
+ * Interface for DORK Client COnsole UI System
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ */
+
+public interface IClientConsoleUI 
+{
+	/**
+	 * Displays and handles console IO
+	 * for the main menu
+	 */
+	void mainMenu();
+	
+	/**
+	 * Displays and handles console IO
+	 * for adding a new server
+	 */
+	void addServer();
+	
+	/**
+	 * Displays and handles console IO
+	 * for the saved servers list
+	 */
+	void savedServers();
+
+}

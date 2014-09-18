@@ -1,0 +1,54 @@
+/**
+ * Implementation of the ClientConsoleUI
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ *
+ */
+
+public class ClientConsoleUI implements IClientConsoleUI 
+{
+
+	@Override
+	public NextUIScreenEnum mainMenu() 
+	{
+		clearScreen();
+		
+	}
+
+	@Override
+	public NextUIScreenEnum addServer() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public NextUIScreenEnum savedServers() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private void clearScreen()
+	{
+		try
+	    {
+	        final String os = System.getProperty("os.name");
+
+	        if (os.contains("Windows"))
+	        {
+	            Runtime.getRuntime().exec("cls");
+	        }
+	        else
+	        {
+	            Runtime.getRuntime().exec("clear");
+	        }
+	    }
+	    catch (final Exception e)
+	    {
+	        //if this fails, at least get to a new line
+	    	System.out.println();
+	    }
+	}
+}

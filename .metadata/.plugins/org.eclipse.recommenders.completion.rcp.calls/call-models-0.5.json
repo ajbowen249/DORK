@@ -1,0 +1,18 @@
+{
+  "C:\\Program Files\\Java\\jre1.8.0_20\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Program Files\\Java\\jre1.8.0_20\\lib\\rt.jar",
+    "status": "RESOLVED",
+    "error": "No class path info available for \u0027C:\\Program Files\\Java\\jre1.8.0_20\\lib\\rt.jar\u0027. Skipped."
+  },
+  "C:\\Users\\Alex.Alex-PC\\DORK\\DORKServer\\src": {
+    "location": "C:\\Users\\Alex.Alex-PC\\DORK\\DORKServer\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Alex.Alex-PC\\DORK\\DORKServer\\src\u0027. Skipped."
+  },
+  "C:\\Users\\Alex.Alex-PC\\DORK\\DORKClient\\src": {
+    "location": "C:\\Users\\Alex.Alex-PC\\DORK\\DORKClient\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Alex.Alex-PC\\DORK\\DORKClient\\src\u0027. Skipped."
+  }
+}

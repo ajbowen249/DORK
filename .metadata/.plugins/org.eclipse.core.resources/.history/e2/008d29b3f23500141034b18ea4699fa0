@@ -1,0 +1,33 @@
+/**
+ * Implementation of the ClientConsoleUI
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ *
+ */
+
+public class ClientConsoleUI implements IClientConsoleUI 
+{
+
+	@Override
+	public NextUIScreenEnum mainMenu() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public NextUIScreenEnum addServer() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public NextUIScreenEnum savedServers() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+}

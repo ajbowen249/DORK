@@ -1,0 +1,33 @@
+/**
+ * Implementation of the ClientConsoleUI
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ *
+ */
+
+public class ClientConsoleUI implements IClientConsoleUI 
+{
+
+	@Override
+	public void mainMenu() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addServer() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void savedServers() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+}

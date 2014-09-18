@@ -1,0 +1,87 @@
+import java.util.Scanner;
+
+/**
+ * Implementation of the ClientConsoleUI
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ *
+ */
+
+public class ClientConsoleUI implements IClientConsoleUI 
+{
+	private Scanner _kb;
+
+	public ClientConsoleUI(Scanner kb)
+	{
+		_kb = kb;
+	}
+	
+	@Override
+	public NextUIScreenEnum mainMenu() 
+	{
+		clearScreen();
+		for (String l : ConsoleUIConstants.C_8025WelcomeScreen)
+		{
+			System.out.println(l);
+		}
+		
+		String input;
+		
+		do
+		{
+			input = _kb.nextLine().toLowerCase();
+			
+			if(input.equals("a") || input.equals("add") || input.equals("add server"))
+			{
+				return NextUIScreenEnum.AddServer;
+			}
+			else if(input.equals("s") || input.equals("saved") || input.equals("saved servers"))
+			{
+				return NextUIScreenEnum.SavedServers;
+			}
+			else
+			{
+				clearScreen();
+				for (String l : ConsoleUIConstants.C_8025WelcomeScreen)
+				{
+					System.out.println(l);
+				}
+			}
+		}while(true);
+	}
+
+	@Override
+	public NextUIScreenEnum addServer() 
+	{
+		return NextUIScreenEnum.SavedServers;
+	}
+
+	@Override
+	public NextUIScreenEnum savedServers() 
+	{
+		return NextUIScreenEnum.SavedServers;
+	}
+	
+	private void clearScreen()
+	{
+		try
+	    {
+	        final String os = System.getProperty("os.name");
+
+	        if (os.contains("Windows"))
+	        {
+	            Runtime.getRuntime().exec("cls");
+	        }
+	        else
+	        {
+	            Runtime.getRuntime().exec("clear");
+	        }
+	    }
+	    catch (final Exception e)
+	    {
+	        //if this fails, at least get to a new line
+	    	System.out.println();
+	    }
+	}
+}

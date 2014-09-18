@@ -1,0 +1,46 @@
+import java.util.LinkedList;
+
+/**
+ * Serializable container for saved user info
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ */
+
+public class SavedUserSettings 
+{
+	final static String C_DefaultUserFilename = "UserSettings.drk";
+	
+	public LinkedList<SavedServerInfo> SavedServers;
+	
+	public static String defaultUserSettingsDirectory()
+	{
+		String systemPath;
+		String slash;
+		
+		String OS = System.getProperty("os.name").toLowerCase();
+		
+	    if (OS.contains("win"))
+	    {
+	    	systemPath = System.getenv("APPDATA");
+	    	slash = "\\";
+	    }
+	    else if (OS.contains("mac"))
+	    {
+	    	systemPath =  System.getProperty("user.home") + "/Library/Application " + "Support";
+	    	slash = "/";
+	    }
+	    else if (OS.contains("nux"))
+	    {
+	    	systemPath = System.getProperty("user.home");
+	    	slash = "/";
+	    }
+	    else
+	    {
+	    	systemPath = System.getProperty("user.dir");
+	    	slash = "/";
+	    }
+	    
+	    return systemPath + slash + "DORK" + slash;
+	}
+}

@@ -1,0 +1,97 @@
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpServer;
+
+public class DORKServerMain 
+{
+
+	private static final Map<String, String> _validArgs;
+	static
+	{
+		_validArgs = new HashMap<String, String>();
+		_validArgs.put("-help", "Displayes the help screen.");
+		_validArgs.put("-port", "Sets which port to listen on. (8080 by default)");
+	}
+
+	private static Integer _port = new Integer(8080);
+	
+	public static int main(String[] args) 
+	{
+		for(int i = 0; i < args.length; i++)
+		{
+			switch(args[i])
+			{
+			case "-help":
+				printHelp();
+				return 0;
+			case "-port":
+				setIntArg(args, i, args[i], _port);
+				break;
+			}
+		}
+		
+		return 0;
+	}
+
+	private static void setIntArg(String[] args, int index, String argType, Integer argToSet)
+	{
+		if(args.length >= index + 2)
+		{
+			String argValue = args[index + 1];
+			
+			if(!argValue.startsWith("-"))
+			{				
+				try
+				{
+					argToSet = Integer.parseInt(argValue);
+				}
+				catch(Exception e)
+				{
+					printArgError(argType);
+				}
+				
+				return;
+			}
+		}
+		
+		printArgError(argType);
+	}
+	
+	private static void setStringArg(String[] args, int index, String argType, String argToSet)
+	{
+		if(args.length >= index + 2)
+		{
+			String argValue = args[index + 1];
+			
+			if(!argValue.startsWith("-"))
+			{				
+				argToSet = argValue;
+				return;
+			}
+		}
+		
+		printArgError(argType);
+	}
+	
+	private static void printArgError(String argType)
+	{
+		System.out.printf("Error in argument \"%s\", %s\n ", argType, _validArgs.get(argType));
+	}
+	
+	private static void printHelp()
+	{
+		System.out.println("DORK Server Help");
+		System.out.println("----------------");
+		
+		for(String item : _validArgs.keySet())
+		{
+			System.out.printf("%s\t\t| %s", item, _validArgs.get(item));
+		}
+	}
+}
