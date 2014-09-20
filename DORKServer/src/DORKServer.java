@@ -17,17 +17,21 @@ public class DORKServer implements IDORKServer
 	private int _port;
 	private HttpServer _server;
 	private IDORKServerRequestHandler _requestHandler;
+	private DORKServerInfoRequestHandler _infoRequestHandler;
 	
 	public DORKServer(int port)
 	{
 		_port = port;
 		
 		_requestHandler = new DORKServerRequestHandler();
+		_infoRequestHandler = new DORKServerInfoRequestHandler();
 		
 		try 
 		{
 			_server = HttpServer.create(new InetSocketAddress(_port), 0);
+			
 			_server.createContext("/main", (HttpHandler)_requestHandler);
+			_server.createContext("/info", (HttpHandler)_infoRequestHandler);
 			
 		} 
 		catch (IOException e) {

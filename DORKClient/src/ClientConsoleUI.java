@@ -16,7 +16,7 @@ public class ClientConsoleUI implements IClientConsoleUI
 	private Scanner _kb;
 	
 	private SavedUserSettings _userSettings;
-	private SavedServerInfo _selectedServer;
+	private DORKServerInfo _selectedServer;
 	
 	public ClientConsoleUI(SavedUserSettings userSettings, Scanner kb)
 	{
@@ -89,11 +89,11 @@ public class ClientConsoleUI implements IClientConsoleUI
 		String serverName = "A new server";	
 		System.out.println("Successfully found server " + serverName + " on " + newIP + ".");
 		
-		SavedServerInfo newServer = new SavedServerInfo(newIP, serverName);
+		DORKServerInfo newServer = new DORKServerInfo(newIP, serverName);
 		
 		boolean inList = false;
 		
-		for(SavedServerInfo s : _userSettings.SavedServers)
+		for(DORKServerInfo s : _userSettings.SavedServers)
 		{
 			if(s.equals(newServer))
 			{

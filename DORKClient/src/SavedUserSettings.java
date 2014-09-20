@@ -22,11 +22,11 @@ public class SavedUserSettings implements java.io.Serializable
 
 	final static String C_DefaultUserFilename = "UserSettings.drk";
 	
-	public LinkedList<SavedServerInfo> SavedServers;
+	public LinkedList<DORKServerInfo> SavedServers;
 	
 	public SavedUserSettings()
 	{
-		SavedServers = new LinkedList<SavedServerInfo>();
+		SavedServers = new LinkedList<DORKServerInfo>();
 	}
 	
 	public static String defaultUserSettingsDirectory()

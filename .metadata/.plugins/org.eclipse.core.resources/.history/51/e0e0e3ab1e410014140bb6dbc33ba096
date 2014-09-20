@@ -1,0 +1,11 @@
+/**
+ * Data container for infotmation about a DORK server
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ */
+
+public class DORKServerInfo 
+{
+	
+}
