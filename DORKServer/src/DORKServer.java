@@ -17,14 +17,14 @@ public class DORKServer implements IDORKServer
 	private int _port;
 	private HttpServer _server;
 	private IDORKServerRequestHandler _requestHandler;
-	private DORKServerInfoRequestHandler _infoRequestHandler;
+	private ServerInfoRequestHandler _infoRequestHandler;
 	
 	public DORKServer(int port)
 	{
 		_port = port;
 		
 		_requestHandler = new DORKServerRequestHandler();
-		_infoRequestHandler = new DORKServerInfoRequestHandler();
+		_infoRequestHandler = new ServerInfoRequestHandler();
 		
 		try 
 		{

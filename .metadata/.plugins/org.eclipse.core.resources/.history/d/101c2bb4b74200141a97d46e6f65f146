@@ -1,0 +1,11 @@
+/**
+ * Handles HTTP Requests
+ * 
+ * @author Alex
+ * @version 0.0.1
+ */
+
+public interface IHTTPRequester 
+{	
+	public String GetRequest(String path);
+}

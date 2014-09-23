@@ -1,0 +1,47 @@
+import java.net.MalformedURLException;
+import java.net.URL;
+
+/**
+ * Primary implementation of the IHTTPRequester
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ */
+
+public class HTTPRequester implements IHTTPRequester 
+{
+	private String _baseUrl;
+	
+	public HTTPRequester(String baseUrl)
+	{
+		_baseUrl = baseUrl;
+	}
+	
+	@Override
+	public String GetRequest(String path) 
+	{
+		String fullURL = _baseUrl + path;
+		String response = "";
+		
+		try 
+		{
+			URL url = new URL(fullURL);
+		} 
+		catch (MalformedURLException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return response;
+	}
+
+	@Override
+	public ServerInfo GetServerInfo() 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

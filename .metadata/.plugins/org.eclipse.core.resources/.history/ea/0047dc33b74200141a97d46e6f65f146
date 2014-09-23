@@ -1,0 +1,123 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.util.LinkedList;
+
+/**
+ * Serializable container for saved user info
+ * 
+ * @author Alex Bowen
+ * @version 0.0.1
+ */
+
+public class SavedUserSettings implements java.io.Serializable
+{
+	private static final long serialVersionUID = 255818722789172080L;
+
+	final static String C_DefaultUserFilename = "UserSettings.drk";
+	
+	public LinkedList<DORKServerInfo> SavedServers;
+	
+	public SavedUserSettings()
+	{
+		SavedServers = new LinkedList<DORKServerInfo>();
+	}
+	
+	public static String defaultUserSettingsDirectory()
+	{
+		String systemPath;
+		String slash;
+		
+		String OS = System.getProperty("os.name").toLowerCase();
+		
+	    if (OS.contains("win"))
+	    {
+	    	systemPath = System.getenv("APPDATA");
+	    	slash = "\\";
+	    }
+	    else if (OS.contains("mac"))
+	    {
+	    	systemPath =  System.getProperty("user.home") + "/Library/Application Support";
+	    	slash = "/";
+	    }
+	    else if (OS.contains("nux"))
+	    {
+	    	systemPath = System.getProperty("user.home");
+	    	slash = "/";
+	    }
+	    else
+	    {
+	    	systemPath = System.getProperty("user.dir");
+	    	slash = "/";
+	    }
+	    
+	    return systemPath + slash + "DORK" + slash;
+	}
+	
+	public static SavedUserSettings createOrLoadDefaultSettings()
+	{		
+		File directory = new File(defaultUserSettingsDirectory());
+		if(!directory.exists())
+		{
+			directory.mkdir();
+		}
+		
+		File settingsFile = new File(defaultUserSettingsDirectory() + C_DefaultUserFilename);
+		
+		if(settingsFile.exists())
+		{
+			try 
+			{
+				FileInputStream settingsFileIn = new FileInputStream(settingsFile.getPath());
+				ObjectInputStream settingsObjIn = new ObjectInputStream(settingsFileIn);
+				
+				SavedUserSettings settings = (SavedUserSettings)settingsObjIn.readObject();
+				
+				settingsFileIn.close();
+				settingsObjIn.close();
+				
+				return settings;
+			} 
+			catch (Exception e) 
+			{
+				System.out.println("Error reading settings file.");
+			}
+		}
+		
+		System.out.println("Creating new User Settings file");
+		SavedUserSettings settings = new SavedUserSettings();
+		saveToDefaultFile(settings);
+		
+		return settings;
+	}
+	
+	public static void saveToDefaultFile(SavedUserSettings settings)
+	{
+		File directory = new File(defaultUserSettingsDirectory());
+		if(!directory.exists())
+		{
+			directory.mkdir();
+		}
+		
+		try
+		{
+			 FileOutputStream fileOut = new FileOutputStream(defaultUserSettingsDirectory() + C_DefaultUserFilename);
+	         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+	         
+	         out.writeObject(settings);
+	         
+	         out.close();
+	         fileOut.close();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Could not save user settings!");
+		}
+	}
+}
