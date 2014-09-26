@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411700805033_10" label="DORKSuite" name="DORKSuite">
+<item elementID="=DORKCommon" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=DORKServer" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=DORKClient" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1409775091490_0" label="Window Working Set" name="Aggregate for window 1409775091489"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1409888963147_1" label="Window Working Set" name="Aggregate for window 1409888963146"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1409941728055_2" label="Window Working Set" name="Aggregate for window 1409941728055"/>
@@ -10,4 +15,5 @@
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411005922024_7" label="Window Working Set" name="Aggregate for window 1411005922024"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411255875648_8" label="Window Working Set" name="Aggregate for window 1411255875648"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411260598470_9" label="Window Working Set" name="Aggregate for window 1411260598469"/>
+<mruList name="DORKSuite"/>
 </workingSetManager>

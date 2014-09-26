@@ -1,7 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=DORKServer/src&lt;{IDORKServer.java[IDORKServer" modifiers="513" timestamp="1411260254182"/>
-<typeInfo handle="=DORKClient/src&lt;{IClientConsoleUI.java[IClientConsoleUI" modifiers="513" timestamp="1411260253707"/>
-<typeInfo handle="=DORKServer/src&lt;{IDORKServerRequestHandler.java[IDORKServerRequestHandler" modifiers="513" timestamp="1411260254205"/>
-<typeInfo handle="=DORKClient/src&lt;{IHTTPRequester.java[IHTTPRequester" modifiers="513" timestamp="1411431335282"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>
